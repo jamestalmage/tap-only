@@ -1,6 +1,6 @@
 {
   "name": "tap-only",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Get exclusive / focus tests for node-tap",
   "license": "MIT",
   "repository": "jamestalmage/tap-only",
