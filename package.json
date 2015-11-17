@@ -1,0 +1,33 @@
+{
+  "name": "tap-only",
+  "version": "0.0.0",
+  "description": "My fabulous module",
+  "license": "MIT",
+  "repository": "jamestalmage/tap-only",
+  "author": {
+    "name": "James Talmage",
+    "email": "james@talmage.io",
+    "url": "github.com/jamestalmage"
+  },
+  "bin": "bin/run-shim.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "tap",
+    "only",
+    "exclusive"
+  ],
+  "peerDependencies": {
+    "tap": "*"
+  },
+  "dependencies": {
+    "fallback-cli": "^2.0.2"
+  }
+}
