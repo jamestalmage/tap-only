@@ -6,21 +6,30 @@ var exclusive = false;
 var started = false;
 var tests = [];
 
+function assertNotStarted() {
+	if (started) {
+		throw new Error('already started, use disableAutoStart() to delay start');
+	}
+}
+
 function test() {
+	assertNotStarted();
 	if (!exclusive) {
 		tests.push(slice.call(arguments));
 	}
 }
 
 function only() {
-	if (started) {
-		throw new Error('you can not call `only()` async without disableAutoStart()');
-	}
+	assertNotStarted();
 	if (!exclusive) {
 		exclusive = true;
 		tests = [];
 	}
 	tests.push(slice.call(arguments));
+}
+
+function skip() {
+	assertNotStarted();
 }
 
 function start() {
@@ -44,4 +53,5 @@ function disableAutoStart() {
 module.exports = test;
 module.exports.only = only;
 module.exports.start = start;
+module.exports.skip = skip;
 module.exports.disableAutoStart = disableAutoStart;
